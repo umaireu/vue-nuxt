@@ -4,7 +4,9 @@ This project is a clean, modern, and performant web application for browsing and
 
 <br/>
 
-<img src="public/design.png" alt="Application Screenshot" />
+## GIF
+![rn-mobile](https://github.com/user-attachments/assets/50290b5c-6412-4255-b73b-6f01187ec8e5)
+
 
 ---
 
