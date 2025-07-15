@@ -1,58 +1,66 @@
-<img src="public/goose.png" class="goose" style="width: 128px; height: 128px"/>
+# Translations UI (Vue3 and Nuxt)
 
-# Hello there, future goose!
+This project is a clean, modern, and performant web application for browsing and filtering translation keys from the Directus API. It is built with Nuxt 3 and demonstrates a robust, component-based architecture with a focus on code quality, reusability, and user experience.
 
-This is your technical assessment, in here we expect you to show the best you can do. We expect to see clean code and a good UI with accessibility in mind. We expect that this assessment won't take more than 8 hours.
+<br/>
 
-## What we are looking for
-
-- A good code structure
-- Usage of composables
-- Code with extensibility in mind
-- Use up to date (s)css properties
-- Usage of typescript
-- Clear documentation (if it helps, add a readme.md)
-
-## The assignment
-
-You are asked to create a overview of all translation keys in Altura. In this view you must be able to filter on `key`, Translation values in different locales and the `updatedAt` date.
-
-### Requirements
-
-- I can see a list of all translation keys
-  - I can see the key, translation value and the last updated date
-  - When hovering over a row, I see a tooltip with the full translation value for each locale.
-- I can filter on keys using a search input
-- I can filter on translation keys using a date range
-- I can see on which page I am and how many pages there are
-  - I am able to change the page
-  - I am able to change the page size
-- When no keys are found, I see a empty state
-
-The keys are hosted on our directus instance, you can it here:
-
-`https://directus.altura.io/items/translationKeys`
-
-We already took the liberty to write typescript types for you. You can find them in the `types.d.ts` file of this project.
-
-Documentation about filtering in the directus api can be found [here](https://directus.io/docs/guides/connect/filter-rules). One note to add is that you are allowed to use the directus sdk, but bonus points if you don't.
-
-### How it should look
-
-You can use the following design as a reference, but feel free to make it your own.
-
-<img src="public/design.png" class="design" />
-
-## Turning the assignment in
-
-You get 3 days to complete this assignment.
-We expect you to create a new repository on your own github account. You can use this repository as a template.
-When you are done, please send us a link to your repository. We will review your code and get back to you as soon as possible.
-If you want to make it private, you should add `roy-ermers` as a collaborator.
+<img src="public/design.png" alt="Application Screenshot" />
 
 ---
 
-If you have any questions, feel free to ask! You can find me at:
+## Features
 
-[roy@altura.io](mailto:roy@altura.io)
-[LinkedIn](https://www.linkedin.com/in/roy-ermers-34b414186)
+- **Live Data Fetching:** Interfaces directly with the Directus API to display translation keys.
+- **Dynamic Filtering:**
+  - Filter translations by key with a debounced search input for performance.
+  - Filter translations by a specific date range. // Due to SERVER ERROR, code is commented
+- **Interactive Table:**
+  - Cleanly displays translation keys, a primary translation, and the last updated date.
+  - On-hover tooltips provide a full list of all available locale translations for each key.
+- **Full Pagination:**
+  - View the total number of items and pages.
+  - Navigate between pages with next/previous controls.
+  - Change the number of items displayed per page.
+- **Responsive UI Feedback:**
+  - Displays a loading state while data is being fetched.
+  - Shows a clear empty state message when no results are found.
+  - Handles and reports API errors gracefully.
+
+---
+
+## Local Development Setup
+
+To run this project locally, follow these steps:
+
+1.  **Clone the repository:**
+
+    ```bash
+    git clone <repository-url>
+    cd <repository-directory>
+    ```
+
+2.  **Install dependencies:**
+    This project uses `npm` as its package manager.
+
+    ```bash
+    npm install
+    ```
+
+3.  **Run the development server:**
+    This will start the application on `http://localhost:3000`. The server will automatically reload when you make changes to the code.
+    ```bash
+    npm run dev
+    ```
+
+## Project Structure
+
+The project follows the standard Nuxt 3 directory structure:
+
+- `assets/`: Global styles and static assets.
+- `components/`: Reusable Vue components (e.g., Input, Pagination, Table).
+- `composables/`: Contains the core `useTranslations` composable which manages all state and data fetching logic.
+- `layouts/`: Defines the main layout for the application pages.
+- `pages/`: Contains the application's pages (routes).
+- `server/`: Nuxt server routes, including the API proxy to Directus.
+- `types/`: TypeScript type definitions.
+- `utils/`: Shared utility functions.
