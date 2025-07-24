@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, computed } from "vue";
+import { ref } from "vue";
 import { useFloating, offset, flip, shift, autoUpdate } from "@floating-ui/vue";
 import { onClickOutside } from "@vueuse/core";
 
@@ -25,7 +25,7 @@ const triggerEl = ref(null);
 const floatingEl = ref(null);
 
 const { floatingStyles } = useFloating(triggerEl, floatingEl, {
-  placement: computed(() => props.placement),
+  placement: props.placement,
   whileElementsMounted: autoUpdate,
   middleware: [offset(8), flip(), shift({ padding: 8 })],
 });

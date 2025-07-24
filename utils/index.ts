@@ -1,11 +1,13 @@
 export const ROUTES = {
   translations: "/translations",
 };
+
 export const API_ENDPOINTS = {
   translations: {
     get: "/api/translations",
   },
 };
+
 export function formatDateAgo(dateString?: string, item?: any): string {
   if (!dateString) {
     return "-";

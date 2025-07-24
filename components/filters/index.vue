@@ -8,6 +8,7 @@ defineProps<{
   };
 }>();
 
+
 const emit = defineEmits<{
   (e: "update:pageSize", value: number): void;
   (e: "update:searchQuery", value: string): void;

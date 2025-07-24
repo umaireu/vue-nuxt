@@ -57,9 +57,6 @@ const noData = computed(
 </template>
 
 <style scoped>
-.filter-container {
-  flex-grow: 1;
-}
 
 .error-state,
 .empty-state,
